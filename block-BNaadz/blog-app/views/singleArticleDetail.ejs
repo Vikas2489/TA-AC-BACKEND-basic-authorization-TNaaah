@@ -1,0 +1,47 @@
+<% include partials/header %>
+
+    <body>
+        <h1>
+            <%=article.title%>
+        </h1>
+        <p>
+            <%=article.description%>
+        </p>
+        <p>
+            <%=article.likes%>
+        </p>
+        <%if(error){%>
+            <span class="red">
+                <%=error%>
+            </span>
+            <%}%>
+                <a href="/articles/<%=article.slug%>/likes" class="red-bg links">Like</a>
+                <a href="/articles/<%=article.slug%>/edit" class=" links">edit</a>
+                <a href="/articles/<%=article.slug%>/delete" class=" links">Delete</a>
+
+                <form action="/articles/<%=article.id%>/comment" method="post">
+                    <input type="text" placeholder="Add comment" name="comment">
+                    <input type="submit" value="Add Comment">
+                </form>
+                <hr>
+
+                <%article.comments.forEach(comments=>{%>
+                    <% if(commentErr){%>
+                        <span class="red">
+                            <%=commentErr%>
+                        </span>
+                        <%}%>
+                            <p>
+                                <%=comments.comment%>
+                            </p>
+                            <p>
+                                <%=comments.likes%>
+                            </p>
+
+                            <a href="/articles/<%=comments.id%>/comments/like" class="red-bg links">Like</a>
+                            <a href="/articles/<%=comments.id%>/comments/edit" class="red-bg links">Edit</a>
+                            <a href="/articles/<%=comments.id%>/comments/delete" class="links">Delete</a>
+                            <%})%>
+                                <hr>
+    </body>
+    <% include partials/footer%>
