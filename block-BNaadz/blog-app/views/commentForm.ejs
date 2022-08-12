@@ -1,0 +1,7 @@
+<%include partials/header%>
+    <form action="/articles/<%=comments.id%>/comments" method="post">
+        <input type="text" name="comment" value="<%=comments.comment%>" placeholder="Update Comment">
+        <input type="submit" value="Update comment" class="links">
+    </form>
+
+    <%include partials/footer%>

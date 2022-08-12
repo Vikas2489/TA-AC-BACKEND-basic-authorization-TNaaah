@@ -1,0 +1,15 @@
+<%- include('partials/header') -%>
+
+    <h1>All the articles are given below:-</h1>
+    <% articles.forEach((article)=>{%>
+        <h2>
+            <%=article.title%>
+        </h2>
+        <p>
+            <%= article.description%>
+        </p>
+        <a href="/articles/<%=article.slug%>">Read More....</a>
+        <%})%>
+            <hr>
+            <a class="links" href="/articles/new">Add article</a>
+            <%- include('partials/footer') -%>
