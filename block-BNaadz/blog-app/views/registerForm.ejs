@@ -1,0 +1,16 @@
+<%- include('partials/header') -%>
+    <h1>Fill the form to register</h1>
+    <%if(error) {%>
+        <span class="red">
+            <%=error%>
+        </span>
+        <%}%>
+            <form action="/users/register" method="post">
+                <input type="text" placeholder="add firstname" name="firstName">
+                <input type="text" placeholder="add lastname" name="lastName">
+                <input type="email" placeholder="add email" name="email">
+                <input type="password" placeholder="add password" name="password">
+                <input type="text" placeholder="add city" name="city">
+                <input type="submit" value="Register Yourself">
+            </form>
+            <%- include('partials/footer') -%>

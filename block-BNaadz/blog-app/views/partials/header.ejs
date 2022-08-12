@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <% if(user){%>
+        <nav class="flex">
+            <a href="/users">
+                <h2>Home</h2>
+            </a>
+            <div>
+                <p>
+                    Logged In As :-
+                    <%=user.email%>
+                </p>
+                <a class="links" href="/users/articles/<%=user.id%>">My Articles</a>
+                <a class="links" href="/articles/new">Add An Article</a>
+                <a class="links" href="/users/logout"> Logout</a>
+            </div>
+        </nav>
+        <% }else{%>
+            <nav class="flex">
+                <a href="/">
+                    <h2>Home</h2>
+                </a>
+                <div><a class="links" href="/users/register"> Go to Register yourself</a>
+                    <a class="links" href="/users/login"> Go to Login</a>
+                </div>
+            </nav>
+            <% }%>
