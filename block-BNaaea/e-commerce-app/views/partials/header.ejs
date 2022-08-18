@@ -1,0 +1,30 @@
+<footer>
+    <% if(user){%>
+        <p>Logged in as
+            <%=user.email%>
+        </p>
+        <div>
+            <% if(user.isAdmin){%>
+                Admin
+
+                <a href="/users/admin/logout" class="btn">Logout</a>
+                <a href="/users/admin/dashboard" class="btn">Admin Dashboard</a>
+                <a href="/products/new" class="btn">Add product</a>
+
+                <% } else { %>
+                    <%=user.name%>
+                        <a href="/users/logout" class="btn">Logout</a>
+                        <% }%>
+        </div>
+
+        <%}else {%>
+            <a class="btn" href="/users/new">Register as user</a>
+
+            <a class="btn" href="/users/admin/new">Register as admin</a>
+
+            <a class="btn" href="/users/login">Login as user</a>
+
+            <a class="btn" href="/users/admin/login">Login as admin</a>
+            <% } %>
+
+</footer>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Update Product Form</title>
+</head>
+
+<body>
+    <h1>Update the given below form of product:-</h1>
+    <form action="/products/<%=product.id%>" method="post" enctype="multipart/form-data">
+        <input type="text" value="<%=product.name%>" placeholder="Add product's name" name="name">
+        <input type="number" value="<%=product.quantity%>" placeholder="Add product's quantity" name="quantity">
+        <input type="number" value="<%=product.price%>" placeholder="Add product's price" name="price">
+        <input type="text" value="<%=category%>" placeholder="Add product's category" name="category">
+        <p>
+            <%=product.image%>
+        </p>
+        <input type="file" name="image" placeholder="Add product's image">
+        <input type="Submit" value="Update" class="btn">
+    </form>
+    <hr>
+    <footer>
+        <a class="btn" href="/admin/products">Lists of products</a>
+        <%include partials/header%>
+    </footer>
+</body>
+
+</html>
