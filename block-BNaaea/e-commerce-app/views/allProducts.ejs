@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>All Products</title>
+</head>
+
+<body>
+    <header>
+        <h1>All products are listed below:-</h1>
+    </header>
+    <main class="products-container">
+        <% productsArr.forEach(product=>{%>
+            <div class="cnt-product">
+                <div>
+                    <img class="product_img" src="/uploads/<%=product.image%>" alt="product_img">
+                </div>
+                <h3>
+                    Name:-
+                    <%=product.name%>
+                </h3>
+                <p>
+                    Quantity:-
+                    <%=product.quantity%>
+                </p>
+                <ul>
+                    <% product.category.forEach(category=>{%>
+                        <li>
+                            <%=category%>
+                        </li>
+                        <%})%>
+                </ul>
+                <p>
+                    Price:- ₹
+                    <%=product.price%>
+                </p>
+                <p>
+                    Total likes:-
+                    <%=product.likes%>
+                </p>
+                <a class="btn red-bg" href="/products/<%=product.id%>/like">Like</a>
+                <a class="btn red-bg" href="/products/<%=product.id%>/unlike">Unlike</a>
+                <a href="/users/<%=product.id%>/cart" class="btn">Add to cart </a>
+                <!-- <form action="" method="post">
+                    <input type="text" name="comment" placeholder="Add a comment">
+                    <input type="submit" value="add a comment">
+                </form> -->
+            </div>
+            <%})%>
+    </main>
+    <hr>
+    <a href="/users/admin/dashboard" class="btn">Admin dashboard</a>
+    <%include partials/header%>
+</body>
+
+</html>

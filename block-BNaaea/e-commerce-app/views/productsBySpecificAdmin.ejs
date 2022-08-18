@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>All products by specific user:-</title>
+</head>
+
+<body>
+    <header>
+        <h1>All products are listed below by admin named as
+            <%=user.name%>:-
+        </h1>
+    </header>
+    <main class="products-container">
+        <% products.forEach(product=>{%>
+            <div class="cnt-product">
+                <div>
+                    <img class="product_img" src="/uploads/<%=product.image%>" alt="product_img">
+                </div>
+                <h3>
+                    Name:-
+                    <%=product.name%>
+                </h3>
+                <p>
+                    Quantity:-
+                    <%=product.quantity%>
+                </p>
+
+                <p>
+                    Price:- ₹
+                    <%=product.price%>
+                </p>
+
+                <p>
+                    Total likes:-
+                    <%=product.likes%>
+                </p>
+                <ul>
+                    <% product.category.forEach(category=>{%>
+                        <li>
+                            <%=category%>
+                        </li>
+                        <%})%>
+                </ul>
+                <a class="btn" href="/products/<%=product.id%>/delete">Delete</a>
+                <a class="btn" href="/products/<%=product.id%>/edit">Edit</a>
+            </div>
+            <hr>
+            <%})%>
+    </main>
+    <footer>
+        <a class="btn" href="/products/new">Add a product</a>
+        <hr>
+        <%include partials/header%>
+    </footer>
+</body>
+
+</html>

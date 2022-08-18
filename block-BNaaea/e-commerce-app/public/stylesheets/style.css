@@ -1,0 +1,89 @@
+body {
+    padding: 50px;
+    font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00b7ff;
+}
+
+input {
+    display: block;
+    border-radius: 0.5rem;
+    border: 1px solid black;
+    padding: 0.5rem;
+    margin: 1rem 0;
+}
+
+.red {
+    color: red;
+}
+
+.block {
+    display: block;
+    margin: 0.5rem;
+}
+
+h1 {
+    background-color: #000000;
+    color: white;
+    border-radius: 0.4rem;
+    padding: 0.4rem;
+    display: block;
+    text-align: center;
+}
+
+h3,
+p,
+h4 {
+    margin: 0.7rem 0;
+}
+
+.cnt-product {
+    background-color: rgba(18, 35, 46, 0.774);
+    display: block;
+    color: white;
+    margin: 4rem 0;
+    width: 400px;
+    height: auto;
+    padding: 0.9rem;
+    border-radius: 0.6rem;
+}
+
+.product_img {
+    object-fit: cover;
+    width: 100%;
+    border-radius: 0.6rem;
+}
+
+
+/* .products-container {
+    margin: 0 auto;
+} */
+
+body {
+    background-color: aliceblue;
+}
+
+.btn {
+    background-color: black;
+    color: white;
+    padding: 0.4rem 0.7rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0.5rem;
+}
+
+.btn:hover {
+    color: white;
+    background-color: cornflowerblue;
+}
+
+.red-bg {
+    background-color: red;
+}
+
+hr {
+    margin: 2rem 0;
+}
