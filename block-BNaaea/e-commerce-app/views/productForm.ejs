@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Product Form</title>
+</head>
+
+<body>
+    <h1>Fill up the given below form to add product:-</h1>
+    <form action="/products" method="post" enctype="multipart/form-data">
+        <input type="text" placeholder="Add product's name" name="name">
+        <input type="number" placeholder="Add product's quantity" name="quantity">
+        <input type="number" placeholder="Add product's price" name="price">
+        <input type="text" placeholder="Add product's category" name="category">
+        <input type="file" name="image" placeholder="Add product's image">
+        <input type="Submit">
+    </form>
+    <hr>
+    <footer>
+        <a class="btn" href="/products">Lists of products</a>
+        <hr>
+        <%include partials/header%>
+    </footer>
+</body>
+
+</html>
