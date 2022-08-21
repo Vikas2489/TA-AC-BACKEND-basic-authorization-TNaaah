@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        input {
+            outline: none;
+        }
+    </style>
+    <title>Podcast App</title>
+</head>
+
+<body class="bg-black">
+    <header class="container m-auto p-5 w-5/6">
+        <nav class="flex justify-between items-center mb-4">
+            <div class="flex items-center">
+                <img class="w-14  object-cover inline-block" src="/images/Spotify_logo_without_text.svg.png" alt="podcast_pic">
+                <a href="" class=" ml-2 inline-block text-4xl text-gray-100"> Podcast</a>
+            </div>
+            <%if(user){%>
+                <ul class="flex items-center space-x-4  text-white">
+                    <li>
+                        <p class="hover:text-gray-400 text-white">
+                            <% if(user.isAdmin){%>
+                                Admin /
+                                <%=user.email%>
+                                    <% }else {%>
+                                        User /
+                                        <%=user.email%>
+                                            <%}%>
+                        </p>
+                    </li>
+                    <li class="hover:text-gray-400"><a href="/podcasts/new">Add Podcast</a></li>
+                    <li class="hover:text-gray-400"><a href="/users/logout">Logout</a></li>
+                </ul>
+                <%} else {%>
+                    <ul class="flex items-center space-x-4 text-white">
+                        <li class="hover:text-gray-400"><a href="/users/login">Login</a></li>
+                        <li class="hover:text-gray-400"><a href="/users/new">Register</a></li>
+                        <li class="hover:text-gray-400"><a href="/users/login/admin">Login as admin</a></li>
+                        <li class="hover:text-gray-400"><a href="/users/register/admin">Register as admin</a></li>
+                    </ul>
+                    <%}%>
+        </nav>
+        <hr>
+    </header>
