@@ -1,0 +1,31 @@
+<%include partials/header%>
+    <form action="/podcasts/<%=podcast.id%>" method="post" class="flex bg-white w-fit rounded-xl my-12 flex-col items-center justify-center container m-auto p-4" enctype="multipart/form-data">
+        <p class="font-bold text-l">Edit Podcast</p>
+        <input value="<%=podcast.name%>" style="width: 360px;" class="block bg-gray-200 pr-5 pl-3 py-1 border-b-3 mt-3 rounded-md" type="text" placeholder="Add name" name="name">
+        <p class="mt-3 ml-1 self-start">
+            Image:-
+            <%=podcast.image%>
+        </p>
+        <input style="width: 364px;" class="block bg-gray-200 text-[14px] pr-5 pl-3 py-1 border-b-3 mt-3 rounded-md" type="file" placeholder="Add image" name="image">
+        <textarea name="description" class="block bg-gray-200 pr-5 pl-3 py-1 border-b-3 mt-3 rounded-md" cols="38" rows="8"><%=podcast.description%></textarea>
+        <%if(user.isAdmin){%>
+            <select style="width: 364px;" class="w-fit block bg-gray-200 pr-5 pl-3 py-1 border-b-3 mt-3 rounded-md" name="podcastsType">
+        <% if(podcast.podcastsType==="free member" ){%>
+          <option value="free member" selected>Free member</option>
+          <option value="VIP member">VIP member</option>
+          <option value="premium member">Premium member</option>
+          <%} else if(podcast.podcastsType==="VIP member" ){%>
+            <option value="VIP member" selected>VIP member</option>
+            <option value="free member">Free member</option>
+            <option value="premium member">Premium member</option>
+            <% } else {%>
+              <option value="premium member" selected>Premium member</option>
+              <option value="free member">Free member</option>
+              <option value="VIP member">VIP member</option>
+              <% }%>
+
+      </select>
+            <%}%>
+                <input style="width: 360px;" class="block py-1 px-5  bg-black rounded-2xl mt-4 text-white hover:text-gray-400 border-b-3 mt-3 rounded-md" type="submit">
+    </form>
+    <%include partials/footer%>
